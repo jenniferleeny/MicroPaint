@@ -3,22 +3,19 @@ import java.io.IOException;
 
 class Username {
   
-  //Instance Variables
-//ArrayList scorelist;
-
 //read file
   public String readFile() {
     String fileName = "scores.txt";
     String line = null;
     String s = "";
     try {
-                FileReader fileReader =new FileReader(fileName);
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                while((line = bufferedReader.readLine()) != null) {
-                    s += line;
+      FileReader fileReader =new FileReader(fileName);
+      BufferedReader bufferedReader = new BufferedReader(fileReader);
+      while((line = bufferedReader.readLine()) != null) {
+        s += line;
         s += "-";
-                }
-                bufferedReader.close();
+      }
+      bufferedReader.close();
     }
     catch(FileNotFoundException ex) {
       System.out.println(
@@ -42,21 +39,4 @@ class Username {
      }
      return scoreboard;
   }
-  /*
-  try {
-   FileWriter fw = new FileWriter("scores.txt");
-  PrintWriter pw = new PrintWriter 
-  }
-  public void writeFile() {
-    try {
-      BufferedWriter writer = new BufferedWriter(new FileWriter(...somefilename..., true));
-      writer.write(...somedata...);
-      writer.flush();
-      writer.close();
-     } catch (IOException ioe) {
-    println("error: " + ioe);
-     }
-    
-  }
-  */
 }
